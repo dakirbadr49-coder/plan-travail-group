@@ -7,3 +7,6 @@ logs/*
 
 # Outil de tunnel (binaire local)
 cloudflared.exe
+
+# Paquet de mise en ligne (contient les mots de passe hachés)
+deploiement/

@@ -50,7 +50,16 @@ Chacun peut ensuite changer son mot de passe dans la page **Équipe**.
 - Le site n'est accessible que tant que le PC est allumé et que la fenêtre reste ouverte.
 - **L'adresse change à chaque lancement** : il faut la renvoyer à l'équipe.
 
-Pour une adresse fixe accessible en permanence, il faudra un hébergement PHP/MariaDB (par exemple alwaysdata, gratuit jusqu'à 100 Mo) : on y importe `install.sql` et on y dépose le code.
+## Hébergement permanent (alwaysdata, gratuit)
+
+1. Créer un compte « Public cloud » gratuit (100 Mo) sur https://www.alwaysdata.com.
+2. **Bases de données > MySQL** : créer une base (ex. `moncompte_suivi`) et un utilisateur, noter le mot de passe.
+3. Ouvrir phpMyAdmin depuis l'interface, choisir la base puis **Importer** le fichier SQL. Pour repartir de zéro, utiliser `sql/install.sql` **en supprimant ses lignes `DROP DATABASE`, `CREATE DATABASE` et `USE`** (le nom de la base est imposé par l'hébergeur).
+4. Envoyer le code (FTP ou gestionnaire de fichiers) dans `www/suivi-rosalie/`.
+5. Créer `config.php` avec `db_host` = `mysql-moncompte.alwaysdata.net`, `db_port` = `3306`, et le nom de base, l'utilisateur et le mot de passe de l'étape 2.
+6. **Web > Sites** : modifier le site et mettre comme répertoire racine `/www/suivi-rosalie/public/`.
+
+L'adresse `https://moncompte.alwaysdata.net` est alors fixe et accessible même PC éteint.
 
 ## Sécurité
 
