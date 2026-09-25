@@ -1,0 +1,2 @@
+# Seul le dossier public/ est accessible depuis le navigateur
+Require all denied

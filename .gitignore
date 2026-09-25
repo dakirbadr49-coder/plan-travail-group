@@ -1,0 +1,9 @@
+# Secrets : jamais dans le dépôt
+config.php
+
+# Journaux d'erreurs
+logs/*
+!logs/.gitkeep
+
+# Outil de tunnel (binaire local)
+cloudflared.exe
